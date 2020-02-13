@@ -17,8 +17,9 @@ func main() {
 func binarySearch(elements []int, value int) int {
 	low := 0
 	high := len(elements) - 1
-	for i := 0; low <= high; i++ {
-		mid := low + high
+	i := 0
+	for ; low <= high; i++ {
+		mid := (low + high) / 2
 		guess := elements[mid]
 		if guess == value {
 			return mid

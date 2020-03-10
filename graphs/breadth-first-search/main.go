@@ -15,24 +15,28 @@ func main() {
 
 	queue := graph["you"]
 
-	i := 0
+	peopleChecked := make(map[string]bool)
+
 	for len(queue) != 0 {
 		fmt.Print("::Status:: -> ")
 		fmt.Println(queue)
 
-		value := queue[i]
-		queue = append(queue[:i], queue[i+1:]...)
+		value := queue[0]
+		queue = append(queue[:0], queue[1:]...)
+		fmt.Println("<< " + value)
 
-		if personIsSeller(value) {
-			fmt.Println(value + " is seller!!")
-			break
-		} else {
-			queue = append(queue, graph[value]...)
-			fmt.Println("<< " + value)
-			fmt.Print(">> ")
-			fmt.Printf("%v\n", graph[value])
+		if peopleChecked[value] != true {
+
+			if personIsSeller(value) {
+				fmt.Println(value + " is seller!!")
+				break
+			} else {
+				queue = append(queue, graph[value]...)
+				fmt.Print(">> ")
+				fmt.Printf("%v\n", graph[value])
+				peopleChecked[value] = true
+			}
 		}
-
 	}
 }
 

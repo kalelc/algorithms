@@ -25,4 +25,11 @@ Here are five Big O run times that you’ll encounter a lot, sorted from fastest
 
 ### Graphs
 
-- breadth-first search (BFS): Finding the shortest path.
+       (1) <- Node
+       / \
+      /   \  <- Edge
+     (2)  (3)
+   /    \
+  (4)   (5)
+
+- breadth-first search (BFS): O(Number of Edges) Finding the shortest path.

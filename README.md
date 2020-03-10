@@ -22,3 +22,7 @@ Here are five Big O run times that you’ll encounter a lot, sorted from fastest
 - Selection Sort: O(n^2)
 - Quicksort: O(n log n)
 - BubbleSort: O(n^2)
+
+### Graphs
+
+- breadth-first search (BFS): Finding the shortest path.

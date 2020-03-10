@@ -4,7 +4,7 @@ import "fmt"
 
 func main() {
 	graph := make(map[string][]string)
-	graph["you"] = []string{"alice", "bob", "claire"}
+	graph["you"] = []string{"alice", "claire", "bob"}
 	graph["bob"] = []string{"anuj", "peggy"}
 	graph["alice"] = []string{"peggy"}
 	graph["claire"] = []string{"thom", "jonny"}
@@ -12,24 +12,34 @@ func main() {
 	graph["peggy"] = []string{}
 	graph["thom"] = []string{}
 	graph["jonny"] = []string{}
-	fmt.Printf("%+v\n", graph)
 
-	var queue []string
-	queue = append(queue, graph["you"]...)
+	queue := graph["you"]
 
-	for i, value := range queue {
+	i := 0
+	for len(queue) != 0 {
+		fmt.Print("::Status:: -> ")
+		fmt.Println(queue)
 
-		fmt.Println(value)
-		if i < len(queue) {
-			queue = removeElement(queue, i)
+		value := queue[i]
+		queue = append(queue[:i], queue[i+1:]...)
+
+		if personIsSeller(value) {
+			fmt.Println(value + " is seller!!")
+			break
 		} else {
-			queue = nil
+			queue = append(queue, graph[value]...)
+			fmt.Println("<< " + value)
+			fmt.Print(">> ")
+			fmt.Printf("%v\n", graph[value])
 		}
 
 	}
 }
 
-func removeElement(slice []string, i int) []string {
-	copy(slice[i:], slice[i+1:])
-	return slice[:len(slice)-1]
+func personIsSeller(name string) bool {
+	if string(name[len(name)-1]) == "m" {
+		return true
+	} else {
+		return false
+	}
 }

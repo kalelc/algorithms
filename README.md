@@ -1,4 +1,4 @@
-# Algorithms In Golang
+# Algorithms
 
 ## Big O Notation, O(n)
 
@@ -18,10 +18,15 @@ Here are five Big O run times that you’ll encounter a lot, sorted from fastest
 
 ## Algorithms
 
-- Binary Search: O(log n)
-- Selection Sort: O(n^2)
-- Quicksort: O(n log n)
-- BubbleSort: O(n^2)
+### Binary Search: O(log n)
+
+It is an algorithm for finding a target value within a sorted array. It works by repeatedly dividing the search interval in half until the target value is found or the search interval is empty.
+
+### Selection Sort: O(n^2)
+
+### Quicksort: O(n log n)
+
+### BubbleSort: O(n^2)
 
 ### Graphs
 

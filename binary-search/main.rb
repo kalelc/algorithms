@@ -6,8 +6,6 @@ def binary_search(elements, value)
   while low <= high
     middle = (low + high) / 2
 
-    puts middle
-
     guess = elements[middle] # get the middle-middle
 
     if guess == value # check if the middle-value is equals to value searched
@@ -21,7 +19,20 @@ def binary_search(elements, value)
   nil
 end
 
-elements = [1,2,3,4,5,10,25,50,100]
+print 'Enter the number to search: '
+number = gets.chomp.to_i
+
+puts '(if not enter value, the defult list is: 5,10,15,20,50,100)'
+print 'enter array to search number example: 1,2,3,4,5,6: '
+list = gets.chomp
+
+numbers = list.nil? ? [1, 2, 3, 4, 5, 6] : list.split(',').map { |x| x.to_i }
 
 # get de position where elements exist
-puts binary_search(elements, 10)
+position = binary_search(numbers, number)
+
+if position.nil?
+  puts 'the value does not exist in the list'
+else
+  puts "the value is the position #{position}"
+end

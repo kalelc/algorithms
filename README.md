@@ -10,11 +10,21 @@ Big O doesn’t tell you the speed in seconds. _Big O notation lets you compare 
 
 Here are five Big O run times that you’ll encounter a lot, sorted from fastest to slowest:
 
+- O(1), constant time
 - O(log n), also known as log time. Example: Binary search.
 - O(n), also known as linear time. Example: Simple search.
 - O(n log n). Example: A fast sorting algorithm, like quicksort.
 - O(n^2). Example: A slow sorting algorithm, like selection sort.
 - O(n!). Example: A really slow algorithm, like the traveling salesperson.
+
+
+## Arrays and Linked Lists
+
+|         | Array | List |
+| Reading |  O(1) | O(n) |
+|Insertion|  O(n) | O(1) |
+|Deletion |  O(n) | O(1) |
+
 
 ## Algorithms
 

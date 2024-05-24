@@ -20,10 +20,11 @@ Here are five Big O run times that you’ll encounter a lot, sorted from fastest
 
 ## Arrays and Linked Lists
 
-|         | Array | List |
-| Reading |  O(1) | O(n) |
-|Insertion|  O(n) | O(1) |
-|Deletion |  O(n) | O(1) |
+|   | Array | List |
+|----------|-------|------|
+| Reading   | O(1) | O(n) |
+| Insertion | O(n) | O(1) |
+| Deletion  | O(n) | O(1) |
 
 
 ## Algorithms
